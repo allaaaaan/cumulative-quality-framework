@@ -8,4 +8,4 @@ Only submit standalone, generalized changes to CQF interfaces, JSON Schemas, con
 - Describe expected PASS, FAIL and UNKNOWN handling explicitly.
 - Review filenames, links, commit messages and diffs for inadvertent disclosure.
 
-Licensing and stable governance are to be decided. No external integration is required to use the draft specification.
+Contributions to this public repository are expected to be compatible with its [MIT License](LICENSE). No external integration is required to use the draft specification. Maintainers may separately accept voluntary financial sponsorship in the future.
