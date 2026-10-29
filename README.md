@@ -50,4 +50,8 @@ These products can implement or complement parts of CQF; no exclusive novelty cl
 - [Schemas](schemas/) — Draft 2020-12 JSON Schema wire contracts
 - [Conformance](conformance/README.md) — behavioral requirements, not executable production code
 
-**Status: initial draft (v0.1).** No runtime, evaluator, model, domain plugin, live fixture or service is included. License not yet selected; public visibility alone does not grant an open-source license.
+**Status: initial draft (v0.1).** No runtime, evaluator, model, domain plugin, live fixture or service is included.
+
+## License and support
+
+[MIT License](LICENSE) — free use, modification and redistribution, including commercial use, with preservation of the license and copyright notice. Financial sponsorship may be offered separately in the future; no donation mechanism is active yet.
