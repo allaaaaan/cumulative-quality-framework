@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Finding",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "finding_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "observation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "severity": {
+      "enum": [
+        "critical",
+        "major",
+        "minor",
+        "suggestion"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "regression",
+        "new_defect",
+        "enhancement",
+        "unknown"
+      ]
+    },
+    "status": {
+      "enum": [
+        "observed",
+        "triaged",
+        "guard_proposed",
+        "guard_validated",
+        "enforced",
+        "closed"
+      ]
+    },
+    "evidence_uris": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "finding_id",
+    "artifact_sha256",
+    "observation",
+    "classification",
+    "status",
+    "observed_at"
+  ]
+}

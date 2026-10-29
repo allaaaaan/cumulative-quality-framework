@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evaluation Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "evaluation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "guard_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "guard_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluator_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verdict": {
+      "enum": [
+        "pass",
+        "fail",
+        "unknown"
+      ]
+    },
+    "evidence_uris": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "calibration_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "evaluation_id",
+    "artifact_sha256",
+    "guard_id",
+    "guard_version",
+    "evaluator_ref",
+    "verdict",
+    "evidence_uris",
+    "evaluated_at"
+  ]
+}

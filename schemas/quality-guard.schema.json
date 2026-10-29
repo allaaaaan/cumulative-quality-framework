@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quality Guard",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "guard_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "artifact_kinds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "artifact_kinds"
+      ],
+      "additionalProperties": false
+    },
+    "evaluation_mode": {
+      "enum": [
+        "deterministic",
+        "semantic",
+        "perceptual"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "blocking",
+        "advisory"
+      ]
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "validated",
+        "enforced",
+        "retired"
+      ]
+    },
+    "evaluator_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "positive_fixture_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "negative_fixture_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "unknown_policy": {
+      "enum": [
+        "block",
+        "human_review"
+      ]
+    }
+  },
+  "required": [
+    "guard_id",
+    "version",
+    "title",
+    "scope",
+    "evaluation_mode",
+    "severity",
+    "status",
+    "evaluator_ref",
+    "positive_fixture_refs",
+    "negative_fixture_refs",
+    "unknown_policy"
+  ]
+}
